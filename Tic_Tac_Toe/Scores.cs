@@ -51,7 +51,7 @@ namespace Tic_Tac_Toe.App
             {
                 if (Con.State == ConnectionState.Closed)
                     Con.Open();
-                QuerySQL = string.Format("INSERT INTO scores(date, number_of_turns, who_won) VALUES('{0}', {1}, '{2}')", data.ToString("yyyy-MM-dd HH:MM:ss"), number_of_turns, who_won);
+                QuerySQL = string.Format("INSERT INTO scores(Date, Rounds, Winner) VALUES('{0}', {1}, '{2}')", data.ToString("yyyy-MM-dd HH:MM:ss"), number_of_turns, who_won);
                 Command.CommandText = QuerySQL;
                 Command.ExecuteNonQuery();
             }

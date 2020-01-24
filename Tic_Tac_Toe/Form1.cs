@@ -12,28 +12,38 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Data.Sqlite;
 using System.Data.SQLite;
-
+using System.IO;
+using System.Data.Common;
 namespace Tic_Tac_Toe
 {
     public partial class Form1 : Form
     {
         bool turn = true;
         int turn_count = 0;
+        SQLiteConnection con = new SQLiteConnection(string.Format("Data Source={0}", Path.Combine(Application.StartupPath, "scores.db")));
+        SqliteConnection command;
+        string querySQL = "";
 
-       
+
 
         public Form1()
         {
             InitializeComponent();
         }
-       
-        // help
+
+        string data = DateTime.Now.ToString();
+      
+
         private void pomocToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Gracze obejmują pola na przemian dążąc do objęcia trzech pól w jednej linii," 
+            MessageBox.Show("Gracze obejmują pola na przemian dążąc do objęcia trzech pól w jednej linii,"
                 + " przy jednoczesnym uniemożliwieniu tego samego przeciwnikowi.");
+
+           querySQL = string.Format("INSERT INTO scores(Date, Rounds, Winner) VALUES (data,6,'X')");
+            command = new SQLiteCommand(querySQL, con);
+            command.ExecuteNonQuery();
         }
-        //end
+     
         private void zakończToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Application.Exit();
@@ -107,7 +117,7 @@ namespace Tic_Tac_Toe
             {
                 if (turn_count == 9)
                     MessageBox.Show("Draw!");
-            }         
+            }
         }
 
         private void disableButtons()
@@ -139,13 +149,13 @@ namespace Tic_Tac_Toe
             turn_count = 0;
             foreach (var item in this.Controls)
             {
-                if(item.GetType().Equals(typeof(Button)))
+                if (item.GetType().Equals(typeof(Button)))
                 {
                     Button A1 = item as Button;
                     A1.Text = string.Empty;
                 }
             }
-            
+
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -156,6 +166,12 @@ namespace Tic_Tac_Toe
         private void tabPage1_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void wynikiToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Window2 w2 = new Window2();
+            w2.ShowDialog();
         }
     }
 }

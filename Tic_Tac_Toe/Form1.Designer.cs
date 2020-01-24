@@ -94,6 +94,7 @@
             this.wynikiToolStripMenuItem.Name = "wynikiToolStripMenuItem";
             this.wynikiToolStripMenuItem.Size = new System.Drawing.Size(55, 20);
             this.wynikiToolStripMenuItem.Text = "Wyniki";
+            this.wynikiToolStripMenuItem.Click += new System.EventHandler(this.wynikiToolStripMenuItem_Click);
             // 
             // C3
             // 

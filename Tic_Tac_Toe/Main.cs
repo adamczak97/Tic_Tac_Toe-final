@@ -20,9 +20,9 @@ namespace Tic_Tac_Toe
 {
     public class Main : Form1
     {
-        // SQLiteConnection con = new SQLiteConnection(string.Format("Data Source={0}", Path.Combine(Application.StartupPath, "scores.db")));
-        //SQLiteCommand command;
-        //string querySQL = "";
+        SQLiteConnection con = new SQLiteConnection(string.Format("Data Source={0}", Path.Combine(Application.StartupPath, "scores.db")));
+        SQLiteCommand command;
+        string querySQL = "";
 
         public static SQLiteConnection _con;
         public static SQLiteConnection Con
@@ -33,7 +33,7 @@ namespace Tic_Tac_Toe
                 {
                     _con = new SQLiteConnection(string.Format("Data Source={0}", Path.Combine(Application.StartupPath, "scores.db")));
                     _con.Open();
-                    _con.Close();
+                  
                 }
                 else
                 {
@@ -41,17 +41,14 @@ namespace Tic_Tac_Toe
                         _con = new SQLiteConnection(string.Format("Data Source = {0}", Path.Combine(Application.StartupPath, "scores.db")));
                 }
                 return _con;
-            }
+            } 
         }
+
         public static SQLiteCommand Command;
         public static SQLiteDataReader Reader;
         public static string QuerySQL = "";
+
+        
+
     }
 }
-
-/*
-querySQL = string.Format("CREATE TABLE scores(Id integer primary key autoincrement, Date dateTime, Rounds integer, Winner text)");
-command = new SQLiteCommand(querySQL, con);
-command.ExecuteNonQuery();
-MessageBox.Show("Tabele utworzono");
-*/
