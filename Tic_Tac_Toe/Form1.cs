@@ -19,6 +19,9 @@ namespace Tic_Tac_Toe
     {
         bool turn = true;
         int turn_count = 0;
+
+       
+
         public Form1()
         {
             InitializeComponent();
@@ -150,13 +153,10 @@ namespace Tic_Tac_Toe
 
         }
 
-        public void wynikiToolStripMenuItem_Click(object sender, EventArgs e)
+        private void tabPage1_Click(object sender, EventArgs e)
         {
-            Window2 w2 = new Window2();
-            w2.ShowDialog();
-        }
 
-    
+        }
     }
 }
 
