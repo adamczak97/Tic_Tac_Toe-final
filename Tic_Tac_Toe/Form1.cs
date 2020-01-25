@@ -14,14 +14,13 @@ using Microsoft.Data.Sqlite;
 using System.Data.SQLite;
 using System.IO;
 using System.Data.Common;
+
 namespace Tic_Tac_Toe
 {
     public partial class Form1 : Form
     {
         bool turn = true;
         int turn_count = 0;
-        SQLiteConnection con = new SQLiteConnection(string.Format("Data Source={0}", Path.Combine(Application.StartupPath, "scores.db")));
-        SqliteConnection command;
         string querySQL = "";
         public static SQLiteCommand Command;
         public static SQLiteDataReader Reader;
@@ -34,35 +33,58 @@ namespace Tic_Tac_Toe
         }
 
         string data = DateTime.Now.ToString();
-      
 
+            string data1 = DateTime.Now.ToString();
+            private SQLiteConnection sql_con;
+            private SQLiteCommand sql_cmd;
+            private SQLiteDataAdapter DB;
+            private DataSet DS = new DataSet();
+            private DataTable DT = new DataTable();
+
+
+        private void SetConnection()
+        {
+            sql_con = new SQLiteConnection("Data Source = scores.db; Version=3;New= False;Compress=True;");
+        }
+        private void ExecuteQuery(string txtQuery)
+        {
+            SetConnection();
+            sql_con.Open();
+            sql_cmd = sql_con.CreateCommand();
+            sql_cmd.CommandText = txtQuery;
+            sql_cmd.ExecuteNonQuery();
+            sql_con.Close();
+        }
         private void pomocToolStripMenuItem_Click(object sender, EventArgs e)
         {
             MessageBox.Show("Gracze obejmują pola na przemian dążąc do objęcia trzech pól w jednej linii,"
                 + " przy jednoczesnym uniemożliwieniu tego samego przeciwnikowi.");
-            string data1 = DateTime.Now.ToString();
-            int r = 8;
+        }
+            /*
             con.Open();
             if(con.State == ConnectionState.Open)
             {
             querySQL = string.Format("CREATE TABLE scores(Id INTEGER PRIMARY KEY AUTOINCREMENT, Date dataTime,Rounds NUMERIC(10),Winner TEXT)");
             Command = new SQLiteCommand(querySQL, con);
             Command.ExecuteNonQuery();
-
             }
             con.Close();
+            */
 
-            string win = "x";
-          /*
-            con.Open();
-            querySQL = string.Format("INSERT INTO scores(Date, Rounds, Winner) VALUES ('{0}','{1}','{2}','{3}')", 1,data1, r, win); ;
-            Command.CommandText = querySQL;
-            Command.ExecuteNonQuery();
-            con.Close();
-        */    
-    }
-        
-     
+
+            /*
+                con.Open();
+                if(con.State == ConnectionState.Open)
+                { 
+                querySQL = string.Format("INSERT INTO scores(Date, Rounds, Winner) VALUES ('{0}','{1}','{2}')", data1, r, win); ;
+                Command.CommandText = querySQL;
+                Command.ExecuteNonQuery();
+                }
+                con.Close();
+             */
+
+
+
         private void zakończToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Application.Exit();
@@ -121,7 +143,9 @@ namespace Tic_Tac_Toe
                 winner = true;
 
             // winning
-            if (winner)
+            string txtQuery = "";
+            string win = "";
+            if (winner == true)
             {
                 disableButtons();
                 string who_win = "";
@@ -131,12 +155,33 @@ namespace Tic_Tac_Toe
                     who_win = "X";
 
                 MessageBox.Show(who_win + " wins!");
+                if (turn_count % 2 == 0)
+                {
+                    win = "O";
+                }
+                else if (turn_count % 2 != 0 && winner == true)
+                {
+                    win = "X";
+                }
+                //zapis wyników do bazy
+                txtQuery = "INSERT INTO scores(Date, Rounds, Winner) VALUES ('" + data1 + "','" + turn_count + "','" + win + "')";
+                ExecuteQuery(txtQuery);
             }
-            else
+            else if (winner == false)
             {
+
                 if (turn_count == 9)
+                {
                     MessageBox.Show("Draw!");
+                    win = "DRAW";
+                    txtQuery = "INSERT INTO scores(Date, Rounds, Winner) VALUES ('" + data1 + "','" + turn_count + "','" + win + "')";
+                    ExecuteQuery(txtQuery
+                        );
+                }
             }
+
+            
+
         }
 
         private void disableButtons()
