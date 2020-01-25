@@ -45,65 +45,7 @@ namespace Tic_Tac_Toe.App
             }
         }
         */
-        public static bool AddScore(DateTime data, int number_of_turns, string who_won)
-        {
-
-            bool wynik = false;
-            try
-            {
-                if (Con.State == ConnectionState.Closed)
-                    Con.Open();
-                //QuerySQL = string.Format("INSERT INTO scores(Date, Rounds, Winner) VALUES('{0}', {1}, '{2}')", data.ToString("yyyy-MM-dd HH:MM:ss"), number_of_turns, who_won);
-                Command.CommandText = querySQL;
-                Command.ExecuteNonQuery();
-            }
-            catch (Exception ex)
-            {
-                string byk = string.Format("Błąd\n{0}", ex.Message);
-                MessageBox.Show(byk, "Błąd", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            finally
-            {
-                Con.Close();
-            }
-            return wynik;
-        }
-
-        public static List<Score> ScoreList
-        {
-            get
-            {
-                List<Score> list = new List<Score>();
-                try
-                {
-                    if (Con.State == ConnectionState.Closed)
-                        Con.Open();
-
-                    querySQL = string.Format("SELECT * FROM scores");
-                    Command = new SQLiteCommand(querySQL, Con);
-                    //Reader = Command.ExecuteReader();
-
-                    if (Reader.HasRows)
-                    {
-                        while (Reader.Read())
-                        {
-                            list.Add(new Score(Reader.GetInt32(0), Reader.GetDateTime(1), Reader.GetInt32(2), Reader["Winner"].ToString()));
-                        }
-                        Reader.Close();
-                    }
-                }
-                catch (Exception ex)
-                {
-                    string byk = string.Format(" Błąd\n{0}", ex.Message);
-                    MessageBox.Show(byk, "Błąd", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-                finally
-                {
-                    Con.Close();
-                }
-                return list;
-            }
-        }
+    
     }
 
     public class Score

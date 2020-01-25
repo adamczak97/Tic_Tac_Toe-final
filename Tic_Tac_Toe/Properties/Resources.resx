@@ -121,19 +121,22 @@
   <data name="12122" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\12122.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="1212" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\1212.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="12121" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\12121.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="70448100_961538720877746_6111001707813011456_n" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\70448100_961538720877746_6111001707813011456_n.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="futurystyczny-tlo-o-strukturze-plastra-miodu_52683-24093" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\futurystyczny-tlo-o-strukturze-plastra-miodu_52683-24093.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="12121" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\12121.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="1212" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\1212.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="12123" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\12123.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="futurystyczny-tlo-o-strukturze-plastra-miodu_52683-24093" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\futurystyczny-tlo-o-strukturze-plastra-miodu_52683-24093.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="12124" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\12124.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

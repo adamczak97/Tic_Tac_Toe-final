@@ -21,7 +21,6 @@ namespace Tic_Tac_Toe
     {
         bool turn = true;
         int turn_count = 0;
-        string querySQL = "";
         public static SQLiteCommand Command;
         public static SQLiteDataReader Reader;
         public static string QuerySQL = "";
@@ -57,20 +56,6 @@ namespace Tic_Tac_Toe
             sql_cmd.ExecuteNonQuery();
             sql_con.Close();
         }
-
-        private void LoadData()
-        {
-            SetConnection();
-            sql_con.Open();
-            sql_cmd = sql_con.CreateCommand();
-            string CommandText = "SELECT * FROM scores";
-            DB = new SQLiteDataAdapter(CommandText, sql_con);
-            DS.Reset();
-            DB.Fill(DS);
-            DT = DS.Tables[0];
-            dataGridView1.DataSource = DT;
-            sql_con.Close();
-        }
         private void pomocToolStripMenuItem_Click(object sender, EventArgs e)
         {
             MessageBox.Show("Gracze obejmują pola na przemian dążąc do objęcia trzech pól w jednej linii,"
@@ -85,7 +70,6 @@ namespace Tic_Tac_Toe
 
         private void b_click(object sender, EventArgs e)
         {
-
             Button b = (Button)sender;
             int newSize = 75;
             b.Font = new Font(Button.DefaultFont.FontFamily, newSize);
@@ -171,7 +155,7 @@ namespace Tic_Tac_Toe
                 }
             
         }
-
+        // uniemożliwienie wybrania tego samego przycisku 2 raz
         private void disableButtons()
         {
             try
@@ -197,7 +181,7 @@ namespace Tic_Tac_Toe
             C1.Enabled = true;
             C2.Enabled = true;
             C3.Enabled = true;
-
+            turn = true;
             turn_count = 0;
             foreach (var item in this.Controls)
             {
@@ -222,15 +206,14 @@ namespace Tic_Tac_Toe
 
         private void wynikiToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Window2 w2 = new Window2();
-            w2.ShowDialog();
+         Window2 w2 = new Window2();
+         w2.ShowDialog();
         }
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+
+        private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
         {
- 
+
         }
-
-
     }
 }
 

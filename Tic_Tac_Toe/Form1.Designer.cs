@@ -55,9 +55,10 @@
             this.wynikiToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(545, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(547, 24);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
+            this.menuStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.menuStrip1_ItemClicked);
             // 
             // nowaGraToolStripMenuItem
             // 
@@ -190,9 +191,12 @@
             // 
             // Form1
             // 
+            this.AllowDrop = true;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(545, 558);
+            this.BackgroundImage = global::Tic_Tac_Toe.Properties.Resources._12124;
+            this.ClientSize = new System.Drawing.Size(547, 558);
+            this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.C3);
             this.Controls.Add(this.B2);
             this.Controls.Add(this.B3);
@@ -202,7 +206,6 @@
             this.Controls.Add(this.C1);
             this.Controls.Add(this.B1);
             this.Controls.Add(this.A1);
-            this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

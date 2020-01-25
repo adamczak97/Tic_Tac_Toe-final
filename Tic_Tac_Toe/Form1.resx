@@ -120,6 +120,12 @@
   <metadata name="menuStrip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>87, 20</value>
   </metadata>
+  <metadata name="menuStrip1.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="C3.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="C3.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -4477,6 +4483,9 @@
         7jUs7/8P3hYruLqucscAAAAASUVORK5CYII=
 </value>
   </data>
+  <metadata name="B2.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
   <data name="B2.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAm4AAAF+CAIAAAC09AFCAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
@@ -8833,6 +8842,9 @@
         7jUs7/8P3hYruLqucscAAAAASUVORK5CYII=
 </value>
   </data>
+  <metadata name="B3.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
   <data name="B3.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAm4AAAF+CAIAAAC09AFCAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
@@ -13189,6 +13201,9 @@
         7jUs7/8P3hYruLqucscAAAAASUVORK5CYII=
 </value>
   </data>
+  <metadata name="C2.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
   <data name="C2.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAm4AAAF+CAIAAAC09AFCAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
@@ -17545,6 +17560,9 @@
         7jUs7/8P3hYruLqucscAAAAASUVORK5CYII=
 </value>
   </data>
+  <metadata name="A3.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
   <data name="A3.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAm4AAAF+CAIAAAC09AFCAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
@@ -21901,6 +21919,9 @@
         7jUs7/8P3hYruLqucscAAAAASUVORK5CYII=
 </value>
   </data>
+  <metadata name="A2.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
   <data name="A2.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAm4AAAF+CAIAAAC09AFCAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
@@ -26257,6 +26278,9 @@
         7jUs7/8P3hYruLqucscAAAAASUVORK5CYII=
 </value>
   </data>
+  <metadata name="C1.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
   <data name="C1.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAm4AAAF+CAIAAAC09AFCAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
@@ -30613,6 +30637,9 @@
         7jUs7/8P3hYruLqucscAAAAASUVORK5CYII=
 </value>
   </data>
+  <metadata name="B1.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
   <data name="B1.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAm4AAAF+CAIAAAC09AFCAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
@@ -34969,6 +34996,9 @@
         7jUs7/8P3hYruLqucscAAAAASUVORK5CYII=
 </value>
   </data>
+  <metadata name="A1.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
   <data name="A1.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAm4AAAF+CAIAAAC09AFCAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
@@ -39325,4 +39355,7 @@
         7jUs7/8P3hYruLqucscAAAAASUVORK5CYII=
 </value>
   </data>
+  <metadata name="$this.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
 </root>

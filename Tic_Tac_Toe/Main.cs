@@ -18,7 +18,7 @@ using System.IO;
 
 namespace Tic_Tac_Toe
 {
-    public class Main 
+    public class Main : Form1
     {
         public static SQLiteConnection _Con;
         public static SQLiteConnection Con
@@ -30,7 +30,7 @@ namespace Tic_Tac_Toe
                 _Con = new SQLiteConnection(string.Format("Data Source={0}", Path.Combine(Application.StartupPath, "scores.db")));
                 _Con.Open();
 
-                querySQL = string.Format("CREATE TABLE scores(Id INTEGER PRIMARY KEY AUTO INCREMENT, Date dataTime,Rounds NUMERIC(10),Winner TEXT)");
+                querySQL = string.Format("CREATE TABLE IF NOT EXISTS scores(Id INTEGER PRIMARY KEY AUTO INCREMENT, Date dataTime,Rounds NUMERIC(10),Winner TEXT)");
                 Command = new SQLiteCommand(querySQL, Con);
                 Command.ExecuteNonQuery();
                 _Con.Close();
@@ -44,11 +44,6 @@ namespace Tic_Tac_Toe
              
             }
         }
-        public static SQLiteCommand Command;
-        public static SqliteDataReader Reader;
         public static string querySQL = "";
-
-        
-
     }
 }
