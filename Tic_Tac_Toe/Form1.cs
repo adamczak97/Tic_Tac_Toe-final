@@ -41,11 +41,13 @@ namespace Tic_Tac_Toe
             private DataSet DS = new DataSet();
             private DataTable DT = new DataTable();
 
-
+        // set connection
         private void SetConnection()
         {
             sql_con = new SQLiteConnection("Data Source = scores.db; Version=3;New= False;Compress=True;");
         }
+
+        // execute query
         private void ExecuteQuery(string txtQuery)
         {
             SetConnection();
@@ -55,35 +57,25 @@ namespace Tic_Tac_Toe
             sql_cmd.ExecuteNonQuery();
             sql_con.Close();
         }
+
+        private void LoadData()
+        {
+            SetConnection();
+            sql_con.Open();
+            sql_cmd = sql_con.CreateCommand();
+            string CommandText = "SELECT * FROM scores";
+            DB = new SQLiteDataAdapter(CommandText, sql_con);
+            DS.Reset();
+            DB.Fill(DS);
+            DT = DS.Tables[0];
+            dataGridView1.DataSource = DT;
+            sql_con.Close();
+        }
         private void pomocToolStripMenuItem_Click(object sender, EventArgs e)
         {
             MessageBox.Show("Gracze obejmują pola na przemian dążąc do objęcia trzech pól w jednej linii,"
                 + " przy jednoczesnym uniemożliwieniu tego samego przeciwnikowi.");
         }
-            /*
-            con.Open();
-            if(con.State == ConnectionState.Open)
-            {
-            querySQL = string.Format("CREATE TABLE scores(Id INTEGER PRIMARY KEY AUTOINCREMENT, Date dataTime,Rounds NUMERIC(10),Winner TEXT)");
-            Command = new SQLiteCommand(querySQL, con);
-            Command.ExecuteNonQuery();
-            }
-            con.Close();
-            */
-
-
-            /*
-                con.Open();
-                if(con.State == ConnectionState.Open)
-                { 
-                querySQL = string.Format("INSERT INTO scores(Date, Rounds, Winner) VALUES ('{0}','{1}','{2}')", data1, r, win); ;
-                Command.CommandText = querySQL;
-                Command.ExecuteNonQuery();
-                }
-                con.Close();
-             */
-
-
 
         private void zakończToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -163,25 +155,21 @@ namespace Tic_Tac_Toe
                 {
                     win = "X";
                 }
+
                 //zapis wyników do bazy
                 txtQuery = "INSERT INTO scores(Date, Rounds, Winner) VALUES ('" + data1 + "','" + turn_count + "','" + win + "')";
                 ExecuteQuery(txtQuery);
             }
-            else if (winner == false)
-            {
-
+            else
                 if (turn_count == 9)
                 {
                     MessageBox.Show("Draw!");
                     win = "DRAW";
+                    //zapis wyników do bazy w przypadku remisu
                     txtQuery = "INSERT INTO scores(Date, Rounds, Winner) VALUES ('" + data1 + "','" + turn_count + "','" + win + "')";
-                    ExecuteQuery(txtQuery
-                        );
+                    ExecuteQuery(txtQuery);
                 }
-            }
-
             
-
         }
 
         private void disableButtons()
@@ -237,6 +225,12 @@ namespace Tic_Tac_Toe
             Window2 w2 = new Window2();
             w2.ShowDialog();
         }
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+ 
+        }
+
+
     }
 }
 

@@ -91,6 +91,8 @@
             // 
             // wynikiToolStripMenuItem
             // 
+            this.wynikiToolStripMenuItem.Checked = true;
+            this.wynikiToolStripMenuItem.CheckState = System.Windows.Forms.CheckState.Checked;
             this.wynikiToolStripMenuItem.Name = "wynikiToolStripMenuItem";
             this.wynikiToolStripMenuItem.Size = new System.Drawing.Size(55, 20);
             this.wynikiToolStripMenuItem.Text = "Wyniki";

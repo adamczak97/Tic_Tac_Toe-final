@@ -28,5 +28,11 @@ namespace Tic_Tac_Toe
         {
 
         }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
+
 }

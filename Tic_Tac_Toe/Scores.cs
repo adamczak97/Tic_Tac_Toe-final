@@ -19,8 +19,10 @@ namespace Tic_Tac_Toe.App
 {
     public class Scores : Main
     {
+        
         // Zwraca ostatnie id wyniku i zwiększa o 1
-        public static int LastId
+        /*
+         public static int LastId
         {
             get
             {
@@ -42,7 +44,7 @@ namespace Tic_Tac_Toe.App
                 return id;
             }
         }
-
+        */
         public static bool AddScore(DateTime data, int number_of_turns, string who_won)
         {
 
