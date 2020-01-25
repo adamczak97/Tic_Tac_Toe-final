@@ -23,7 +23,9 @@ namespace Tic_Tac_Toe
         SQLiteConnection con = new SQLiteConnection(string.Format("Data Source={0}", Path.Combine(Application.StartupPath, "scores.db")));
         SqliteConnection command;
         string querySQL = "";
-
+        public static SQLiteCommand Command;
+        public static SQLiteDataReader Reader;
+        public static string QuerySQL = "";
 
 
         public Form1()
@@ -38,11 +40,28 @@ namespace Tic_Tac_Toe
         {
             MessageBox.Show("Gracze obejmują pola na przemian dążąc do objęcia trzech pól w jednej linii,"
                 + " przy jednoczesnym uniemożliwieniu tego samego przeciwnikowi.");
+            string data1 = DateTime.Now.ToString();
+            int r = 8;
+            con.Open();
+            if(con.State == ConnectionState.Open)
+            {
+            querySQL = string.Format("CREATE TABLE scores(Id INTEGER PRIMARY KEY AUTOINCREMENT, Date dataTime,Rounds NUMERIC(10),Winner TEXT)");
+            Command = new SQLiteCommand(querySQL, con);
+            Command.ExecuteNonQuery();
 
-           querySQL = string.Format("INSERT INTO scores(Date, Rounds, Winner) VALUES (data,6,'X')");
-            command = new SQLiteCommand(querySQL, con);
-            command.ExecuteNonQuery();
-        }
+            }
+            con.Close();
+
+            string win = "x";
+          /*
+            con.Open();
+            querySQL = string.Format("INSERT INTO scores(Date, Rounds, Winner) VALUES ('{0}','{1}','{2}','{3}')", 1,data1, r, win); ;
+            Command.CommandText = querySQL;
+            Command.ExecuteNonQuery();
+            con.Close();
+        */    
+    }
+        
      
         private void zakończToolStripMenuItem_Click(object sender, EventArgs e)
         {

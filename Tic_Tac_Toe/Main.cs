@@ -18,35 +18,35 @@ using System.IO;
 
 namespace Tic_Tac_Toe
 {
-    public class Main : Form1
+    public class Main 
     {
-        SQLiteConnection con = new SQLiteConnection(string.Format("Data Source={0}", Path.Combine(Application.StartupPath, "scores.db")));
-        SQLiteCommand command;
-        string querySQL = "";
-
-        public static SQLiteConnection _con;
+        public static SQLiteConnection _Con;
         public static SQLiteConnection Con
         {
-            get
-            {
-                if (!File.Exists(Path.Combine(Application.StartupPath, "scores.db")))
+           get
+           {
+                 if (!File.Exists(Path.Combine(Application.StartupPath, "scores.db")))
                 {
-                    _con = new SQLiteConnection(string.Format("Data Source={0}", Path.Combine(Application.StartupPath, "scores.db")));
-                    _con.Open();
-                  
+                _Con = new SQLiteConnection(string.Format("Data Source={0}", Path.Combine(Application.StartupPath, "scores.db")));
+                _Con.Open();
+
+                querySQL = string.Format("CREATE TABLE scores(Id INTEGER PRIMARY KEY AUTO INCREMENT, Date dataTime,Rounds NUMERIC(10),Winner TEXT)");
+                Command = new SQLiteCommand(querySQL, Con);
+                Command.ExecuteNonQuery();
+                _Con.Close();
                 }
                 else
                 {
-                    if (_con == null)
-                        _con = new SQLiteConnection(string.Format("Data Source = {0}", Path.Combine(Application.StartupPath, "scores.db")));
+                    if (_Con == null)
+                        _Con = new SQLiteConnection(string.Format("Data Source = {0}", Path.Combine(Application.StartupPath, "scores.db")));
                 }
-                return _con;
-            } 
+                return _Con;
+             
+            }
         }
-
         public static SQLiteCommand Command;
-        public static SQLiteDataReader Reader;
-        public static string QuerySQL = "";
+        public static SqliteDataReader Reader;
+        public static string querySQL = "";
 
         
 

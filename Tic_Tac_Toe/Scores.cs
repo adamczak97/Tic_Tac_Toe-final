@@ -29,8 +29,8 @@ namespace Tic_Tac_Toe.App
                 {
                     if (Con.State == ConnectionState.Closed)
                         Con.Open();
-                    QuerySQL = string.Format("SELECT Id FROM scores ORDER BY Id desc limit 1");
-                    Command = new SQLiteCommand(QuerySQL, Con);
+                    querySQL = string.Format("SELECT Id FROM scores ORDER BY Id desc limit 1");
+                    Command = new SQLiteCommand(querySQL, Con);
                     id = Convert.ToInt32(Command.ExecuteScalar());
                     ++id;
                 }
@@ -51,8 +51,8 @@ namespace Tic_Tac_Toe.App
             {
                 if (Con.State == ConnectionState.Closed)
                     Con.Open();
-                QuerySQL = string.Format("INSERT INTO scores(Date, Rounds, Winner) VALUES('{0}', {1}, '{2}')", data.ToString("yyyy-MM-dd HH:MM:ss"), number_of_turns, who_won);
-                Command.CommandText = QuerySQL;
+                //QuerySQL = string.Format("INSERT INTO scores(Date, Rounds, Winner) VALUES('{0}', {1}, '{2}')", data.ToString("yyyy-MM-dd HH:MM:ss"), number_of_turns, who_won);
+                Command.CommandText = querySQL;
                 Command.ExecuteNonQuery();
             }
             catch (Exception ex)
@@ -77,9 +77,9 @@ namespace Tic_Tac_Toe.App
                     if (Con.State == ConnectionState.Closed)
                         Con.Open();
 
-                    QuerySQL = string.Format("SELECT * FROM scores");
-                    Command = new SQLiteCommand(QuerySQL, Con);
-                    Reader = Command.ExecuteReader();
+                    querySQL = string.Format("SELECT * FROM scores");
+                    Command = new SQLiteCommand(querySQL, Con);
+                    //Reader = Command.ExecuteReader();
 
                     if (Reader.HasRows)
                     {
